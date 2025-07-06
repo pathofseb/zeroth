@@ -1,8 +1,5 @@
 <div align="center">
 <h1>basic zbot walking policy</h1>
-<p>Train and deploy your own humanoid robot controller in 700 lines of Python</p>
-
-
 
 
 </div>
