@@ -52,7 +52,7 @@ python -m convert /path/to/ckpt.bin /path/to/model.kinfer
 10. Visualize the converted model in [`kinfer-sim`](https://docs.kscale.dev/docs/k-infer):
 
 ```bash
-kinfer-sim assets/model.kinfer kbot --start-height 1.2 --save-video video.mp4
+kinfer-sim assets/model.kinfer kbot --start-height 0.32 --save-video video.mp4
 ```
 
 11. Commit the K-Infer model and the recorded video to this repository
