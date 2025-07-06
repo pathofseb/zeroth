@@ -1,36 +1,17 @@
 <div align="center">
-<h1>K-Sim Gym</h1>
+<h1>basic zbot walking policy</h1>
 <p>Train and deploy your own humanoid robot controller in 700 lines of Python</p>
-<h3>
-  <a href="https://youtu.be/c64FnSvj8kQ">Tutorial</a> ·
-  <a href="https://kscale.dev/benchmarks">Leaderboard</a> ·
-  <a href="https://docs.kscale.dev/docs/quick-start#/">Documentation</a>
-  <br />
-  <a href="https://github.com/kscalelabs/ksim/tree/master/examples">K-Sim Examples</a> ·
-  <a href="https://github.com/kscalelabs/kbot-joystick">Joystick Example</a>
-</h3>
 
-https://github.com/user-attachments/assets/82e5e998-1d62-43e2-ae52-864af6e72629
+
+
 
 </div>
 
 ## Getting Started
 
-You can use this repository as a GitHub template or as a Google Colab.
-
-### Google Colab
-
-You can quickly try out the humanoid benchmark by running the [training notebook](https://colab.research.google.com/github/kscalelabs/ksim-gym/blob/master/train.ipynb) in Google Colab.
-
-### On your own GPU
-
-1. Read through the [current leaderboard](https://www.kscale.dev/benchmarks) submissions and through the [ksim examples](https://github.com/kscalelabs/ksim/tree/master/examples)
-2. Create a new repository from this template by clicking [here](https://github.com/new?template_name=ksim-gym&template_owner=kscalelabs)
-3. Clone the new repository you create from this template:
-
 ```bash
-git clone git@github.com:<YOUR USERNAME>/ksim-gym.git
-cd ksim-gym
+git clone git@github.com:kscalelabs/zbot-policy-walking.git
+cd zbot-policy-walking
 ```
 
 4. Create a new Python environment (we require Python 3.11 or later and recommend using [conda](https://docs.conda.io/projects/conda/en/stable/user-guide/getting-started.html))
