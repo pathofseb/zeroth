@@ -1,11 +1,11 @@
-2025-10-02 21:54:51.238514: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-10-02 22:00:02.630070: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
-E0000 00:00:1759434891.253862 4167873 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
-E0000 00:00:1759434891.259038 4167873 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
-W0000 00:00:1759434891.272974 4167873 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
-W0000 00:00:1759434891.273021 4167873 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
-W0000 00:00:1759434891.273027 4167873 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
-W0000 00:00:1759434891.273032 4167873 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+E0000 00:00:1759435202.645638 4170092 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1759435202.650771 4170092 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1759435202.664654 4170092 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1759435202.664700 4170092 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1759435202.664706 4170092 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1759435202.664711 4170092 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
 /cluster/work/sebasrb/zbot-policy-walking/train.py:888: UserWarning: `equinox.static_field` is deprecated in favour of `equinox.field(static=True)`
   num_inputs: int = eqx.static_field()
 /cluster/work/sebasrb/zbot-policy-walking/train.py:889: UserWarning: `equinox.static_field` is deprecated in favour of `equinox.field(static=True)`
@@ -18,14 +18,14 @@ W0000 00:00:1759434891.273032 4167873 computation_placer.cc:177] computation pla
   max_std: float = eqx.static_field()
 /cluster/work/sebasrb/zbot-policy-walking/train.py:893: UserWarning: `equinox.static_field` is deprecated in favour of `equinox.field(static=True)`
   var_scale: float = eqx.static_field()
-2025-10-02 21:55:02.294582: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-10-02 22:00:13.290562: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
-E0000 00:00:1759434902.310071 4167905 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
-E0000 00:00:1759434902.315193 4167905 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
-W0000 00:00:1759434902.328897 4167905 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
-W0000 00:00:1759434902.328948 4167905 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
-W0000 00:00:1759434902.328955 4167905 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
-W0000 00:00:1759434902.328959 4167905 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+E0000 00:00:1759435213.306533 4170122 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1759435213.311708 4170122 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1759435213.325510 4170122 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1759435213.325556 4170122 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1759435213.325562 4170122 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1759435213.325567 4170122 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
 /cluster/work/sebasrb/zbot-policy-walking/train.py:888: UserWarning: `equinox.static_field` is deprecated in favour of `equinox.field(static=True)`
   num_inputs: int = eqx.static_field()
 /cluster/work/sebasrb/zbot-policy-walking/train.py:889: UserWarning: `equinox.static_field` is deprecated in favour of `equinox.field(static=True)`
@@ -38,14 +38,14 @@ W0000 00:00:1759434902.328959 4167905 computation_placer.cc:177] computation pla
   max_std: float = eqx.static_field()
 /cluster/work/sebasrb/zbot-policy-walking/train.py:893: UserWarning: `equinox.static_field` is deprecated in favour of `equinox.field(static=True)`
   var_scale: float = eqx.static_field()
-2025-10-02 21:55:12.654382: I external/xla/xla/pjrt/pjrt_api.cc:118] GetPjrtApi was found for cuda at /cluster/home/sebasrb/.local/lib/python3.11/site-packages/jax_plugins/xla_cuda12/xla_cuda_plugin.so
-2025-10-02 21:55:12.654807: I external/xla/xla/pjrt/pjrt_api.cc:96] PJRT_Api is set for device type cuda
-INFO:2025-10-02 21:55:12,658:jax._src.xla_bridge:822: Unable to initialize backend 'tpu': INTERNAL: Failed to open libtpu.so: libtpu.so: cannot open shared object file: No such file or directory
-2025-10-02 21:55:12.658217: I external/xla/xla/pjrt/pjrt_api.cc:167] The PJRT plugin has PJRT API version 0.75. The framework PJRT API version is 0.75.
-2025-10-02 21:55:12.814240: I external/xla/xla/service/service.cc:163] XLA service 0x89633f0 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
-2025-10-02 21:55:12.814286: I external/xla/xla/service/service.cc:171]   StreamExecutor device (0): NVIDIA H100 80GB HBM3, Compute Capability 9.0
-2025-10-02 21:55:12.843791: I external/xla/xla/stream_executor/cuda/cuda_dnn.cc:473] Loaded cuDNN version 91301
-2025-10-02 21:55:12.844090: I external/xla/xla/pjrt/pjrt_c_api_client.cc:133] PjRtCApiClient created.
+2025-10-02 22:00:23.487267: I external/xla/xla/pjrt/pjrt_api.cc:118] GetPjrtApi was found for cuda at /cluster/home/sebasrb/.local/lib/python3.11/site-packages/jax_plugins/xla_cuda12/xla_cuda_plugin.so
+2025-10-02 22:00:23.487686: I external/xla/xla/pjrt/pjrt_api.cc:96] PJRT_Api is set for device type cuda
+INFO:2025-10-02 22:00:23,490:jax._src.xla_bridge:822: Unable to initialize backend 'tpu': INTERNAL: Failed to open libtpu.so: libtpu.so: cannot open shared object file: No such file or directory
+2025-10-02 22:00:23.491079: I external/xla/xla/pjrt/pjrt_api.cc:167] The PJRT plugin has PJRT API version 0.75. The framework PJRT API version is 0.75.
+2025-10-02 22:00:23.660040: I external/xla/xla/service/service.cc:163] XLA service 0x9f424a0 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2025-10-02 22:00:23.660087: I external/xla/xla/service/service.cc:171]   StreamExecutor device (0): NVIDIA H100 80GB HBM3, Compute Capability 9.0
+2025-10-02 22:00:23.690466: I external/xla/xla/stream_executor/cuda/cuda_dnn.cc:473] Loaded cuDNN version 91301
+2025-10-02 22:00:23.690750: I external/xla/xla/pjrt/pjrt_c_api_client.cc:133] PjRtCApiClient created.
 Traceback (most recent call last):
   File "<frozen runpy>", line 198, in _run_module_as_main
   File "<frozen runpy>", line 88, in _run_code
