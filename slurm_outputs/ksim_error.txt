@@ -1,29 +1,11 @@
-/cluster/apps/eb/software/Anaconda3/2024.02-1/lib/python3.10/site-packages/conda/base/context.py:202: FutureWarning: Adding 'defaults' to channel list implicitly is deprecated and will be removed in 25.3. 
-
-To remove this warning, please choose a default channel explicitly with conda's regular configuration system, e.g. by adding 'defaults' to the list of channels:
-
-  conda config --add channels defaults
-
-For more information see https://docs.conda.io/projects/conda/en/stable/user-guide/configuration/use-condarc.html
-
-  deprecated.topic(
-/cluster/apps/eb/software/Anaconda3/2024.02-1/lib/python3.10/site-packages/conda/base/context.py:202: FutureWarning: Adding 'defaults' to channel list implicitly is deprecated and will be removed in 25.3. 
-
-To remove this warning, please choose a default channel explicitly with conda's regular configuration system, e.g. by adding 'defaults' to the list of channels:
-
-  conda config --add channels defaults
-
-For more information see https://docs.conda.io/projects/conda/en/stable/user-guide/configuration/use-condarc.html
-
-  deprecated.topic(
-2025-10-02 21:45:19.934883: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-10-02 21:54:51.238514: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
-E0000 00:00:1759434320.802542 4164947 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
-E0000 00:00:1759434321.258255 4164947 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
-W0000 00:00:1759434323.195583 4164947 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
-W0000 00:00:1759434323.195639 4164947 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
-W0000 00:00:1759434323.195647 4164947 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
-W0000 00:00:1759434323.195652 4164947 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+E0000 00:00:1759434891.253862 4167873 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1759434891.259038 4167873 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1759434891.272974 4167873 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1759434891.273021 4167873 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1759434891.273027 4167873 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1759434891.273032 4167873 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
 /cluster/work/sebasrb/zbot-policy-walking/train.py:888: UserWarning: `equinox.static_field` is deprecated in favour of `equinox.field(static=True)`
   num_inputs: int = eqx.static_field()
 /cluster/work/sebasrb/zbot-policy-walking/train.py:889: UserWarning: `equinox.static_field` is deprecated in favour of `equinox.field(static=True)`
@@ -36,14 +18,14 @@ W0000 00:00:1759434323.195652 4164947 computation_placer.cc:177] computation pla
   max_std: float = eqx.static_field()
 /cluster/work/sebasrb/zbot-policy-walking/train.py:893: UserWarning: `equinox.static_field` is deprecated in favour of `equinox.field(static=True)`
   var_scale: float = eqx.static_field()
-2025-10-02 21:46:55.751804: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-10-02 21:55:02.294582: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
-E0000 00:00:1759434415.767062 4165244 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
-E0000 00:00:1759434415.772182 4165244 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
-W0000 00:00:1759434415.786021 4165244 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
-W0000 00:00:1759434415.786064 4165244 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
-W0000 00:00:1759434415.786070 4165244 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
-W0000 00:00:1759434415.786075 4165244 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+E0000 00:00:1759434902.310071 4167905 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1759434902.315193 4167905 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1759434902.328897 4167905 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1759434902.328948 4167905 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1759434902.328955 4167905 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1759434902.328959 4167905 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
 /cluster/work/sebasrb/zbot-policy-walking/train.py:888: UserWarning: `equinox.static_field` is deprecated in favour of `equinox.field(static=True)`
   num_inputs: int = eqx.static_field()
 /cluster/work/sebasrb/zbot-policy-walking/train.py:889: UserWarning: `equinox.static_field` is deprecated in favour of `equinox.field(static=True)`
@@ -56,14 +38,14 @@ W0000 00:00:1759434415.786075 4165244 computation_placer.cc:177] computation pla
   max_std: float = eqx.static_field()
 /cluster/work/sebasrb/zbot-policy-walking/train.py:893: UserWarning: `equinox.static_field` is deprecated in favour of `equinox.field(static=True)`
   var_scale: float = eqx.static_field()
-2025-10-02 21:47:05.450094: I external/xla/xla/pjrt/pjrt_api.cc:118] GetPjrtApi was found for cuda at /cluster/home/sebasrb/.local/lib/python3.11/site-packages/jax_plugins/xla_cuda12/xla_cuda_plugin.so
-2025-10-02 21:47:05.450501: I external/xla/xla/pjrt/pjrt_api.cc:96] PJRT_Api is set for device type cuda
-INFO:2025-10-02 21:47:05,453:jax._src.xla_bridge:822: Unable to initialize backend 'tpu': INTERNAL: Failed to open libtpu.so: libtpu.so: cannot open shared object file: No such file or directory
-2025-10-02 21:47:05.453836: I external/xla/xla/pjrt/pjrt_api.cc:167] The PJRT plugin has PJRT API version 0.75. The framework PJRT API version is 0.75.
-2025-10-02 21:47:05.614208: I external/xla/xla/service/service.cc:163] XLA service 0xa67a610 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
-2025-10-02 21:47:05.614261: I external/xla/xla/service/service.cc:171]   StreamExecutor device (0): NVIDIA H100 80GB HBM3, Compute Capability 9.0
-2025-10-02 21:47:05.643241: I external/xla/xla/stream_executor/cuda/cuda_dnn.cc:473] Loaded cuDNN version 91301
-2025-10-02 21:47:05.643524: I external/xla/xla/pjrt/pjrt_c_api_client.cc:133] PjRtCApiClient created.
+2025-10-02 21:55:12.654382: I external/xla/xla/pjrt/pjrt_api.cc:118] GetPjrtApi was found for cuda at /cluster/home/sebasrb/.local/lib/python3.11/site-packages/jax_plugins/xla_cuda12/xla_cuda_plugin.so
+2025-10-02 21:55:12.654807: I external/xla/xla/pjrt/pjrt_api.cc:96] PJRT_Api is set for device type cuda
+INFO:2025-10-02 21:55:12,658:jax._src.xla_bridge:822: Unable to initialize backend 'tpu': INTERNAL: Failed to open libtpu.so: libtpu.so: cannot open shared object file: No such file or directory
+2025-10-02 21:55:12.658217: I external/xla/xla/pjrt/pjrt_api.cc:167] The PJRT plugin has PJRT API version 0.75. The framework PJRT API version is 0.75.
+2025-10-02 21:55:12.814240: I external/xla/xla/service/service.cc:163] XLA service 0x89633f0 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2025-10-02 21:55:12.814286: I external/xla/xla/service/service.cc:171]   StreamExecutor device (0): NVIDIA H100 80GB HBM3, Compute Capability 9.0
+2025-10-02 21:55:12.843791: I external/xla/xla/stream_executor/cuda/cuda_dnn.cc:473] Loaded cuDNN version 91301
+2025-10-02 21:55:12.844090: I external/xla/xla/pjrt/pjrt_c_api_client.cc:133] PjRtCApiClient created.
 Traceback (most recent call last):
   File "<frozen runpy>", line 198, in _run_module_as_main
   File "<frozen runpy>", line 88, in _run_code
@@ -77,15 +59,28 @@ Traceback (most recent call last):
     run_single_process_training(task, *cfgs, use_cli=use_cli)
   File "/cluster/home/sebasrb/.local/lib/python3.11/site-packages/xax/task/launchers/single_process.py", line 20, in run_single_process_training
     task_obj.run()
-  File "/cluster/home/sebasrb/.local/lib/python3.11/site-packages/ksim/task/rl.py", line 1009, in run
+  File "/cluster/work/sebasrb/zbot-policy-walking/ksim-env/lib/python3.11/site-packages/ksim/task/rl.py", line 1031, in run
     self.run_training()
-  File "/cluster/home/sebasrb/.local/lib/python3.11/site-packages/ksim/task/rl.py", line 2042, in run_training
+  File "/cluster/work/sebasrb/zbot-policy-walking/ksim-env/lib/python3.11/site-packages/ksim/task/rl.py", line 2169, in run_training
     constants, carry, state = self.initialize_rl_training(mj_model, rng)
                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/cluster/home/sebasrb/.local/lib/python3.11/site-packages/ksim/task/rl.py", line 1976, in initialize_rl_training
-    randomizers = self.get_physics_randomizers(mjx_model)
-                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/cluster/work/sebasrb/zbot-policy-walking/train.py", line 1449, in get_physics_randomizers
-    ksim.IMUAlignmentRandomizer(
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-AttributeError: module 'ksim' has no attribute 'IMUAlignmentRandomizer'
+  File "/cluster/work/sebasrb/zbot-policy-walking/ksim-env/lib/python3.11/site-packages/ksim/task/rl.py", line 2117, in initialize_rl_training
+    env_states=self._get_env_state(
+               ^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/work/sebasrb/zbot-policy-walking/ksim-env/lib/python3.11/site-packages/ksim/task/rl.py", line 1926, in _get_env_state
+    randomization_dict, physics_state = randomization_fn(
+                                        ^^^^^^^^^^^^^^^^^
+  File "/cluster/work/sebasrb/zbot-policy-walking/ksim-env/lib/python3.11/site-packages/ksim/task/rl.py", line 315, in apply_randomizations
+    randomizations = get_physics_randomizers(physics_model, randomizers, rand_rng)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/work/sebasrb/zbot-policy-walking/ksim-env/lib/python3.11/site-packages/ksim/task/rl.py", line 299, in get_physics_randomizers
+    all_randomizations[randomizer.randomization_name] = randomizer(physics_model, randomization_rng)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/work/sebasrb/zbot-policy-walking/ksim-env/lib/python3.11/site-packages/ksim/randomization.py", line 283, in __call__
+    q_offset = xax.quat_mul(qz, xax.quat_mul(qy, qx))
+               ^^^^^^^^^^^^
+  File "/cluster/home/sebasrb/.local/lib/python3.11/site-packages/xax/__init__.py", line 364, in __getattr__
+    raise AttributeError(f"{__name__} has no attribute {name}")
+AttributeError: xax has no attribute quat_mul
+--------------------
+For simplicity, JAX has removed its internal frames from the traceback of the following exception. Set JAX_TRACEBACK_FILTERING=off to include these.
