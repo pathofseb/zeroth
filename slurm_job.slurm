@@ -52,7 +52,9 @@ export MUJOCO_GL=osmesa
 echo "Set MUJOCO_GL=osmesa for headless rendering"
 
 # Run training
-python -m train max_steps=100
+python -m train load_from_ckpt_path=zbot_walking_task/run_5/checkpoints/ckpt.bin
+
+
 
 # Example: to load pretrained checkpoint and run in view mode, uncomment:
 # python -m train load_from_ckpt_path=assets/ckpt.bin run_mode=view
