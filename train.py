@@ -1433,8 +1433,8 @@ class ZbotWalkingTask(ksim.PPOTask[ZbotWalkingTaskConfig]):
             torque_noise_type="none",
         )
 
-    def get_physics_randomizers(self, physics_model: ksim.PhysicsModel) -> list[ksim.PhysicsRandomizer]:
-        return [
+    def get_physics_randomizers(self, physics_model: ksim.PhysicsModel) -> tuple[ksim.PhysicsRandomizer, ...]:
+        return (
             ksim.StaticFrictionRandomizer(),
             ksim.ArmatureRandomizer(),
             ksim.AllBodiesMassMultiplicationRandomizer(scale_lower=0.95, scale_upper=1.15),
@@ -1449,10 +1449,10 @@ class ZbotWalkingTask(ksim.PPOTask[ZbotWalkingTaskConfig]):
             ksim.IMUAlignmentRandomizer(
                 site_name="imu_site", tilt_std_rad=math.radians(5), yaw_std_rad=math.radians(1.0), translate_std_m=0.005
             ),
-        ]
+        )
 
-    def get_events(self, physics_model: ksim.PhysicsModel) -> list[ksim.Event]:
-        return [
+    def get_events(self, physics_model: ksim.PhysicsModel) -> tuple[ksim.Event, ...]:
+        return (
             ksim.PushEvent(
                 x_linvel=0.1,
                 y_linvel=0.1,
@@ -1463,14 +1463,14 @@ class ZbotWalkingTask(ksim.PPOTask[ZbotWalkingTaskConfig]):
                 vel_range=(0.05, 0.15),
                 interval_range=(2.0, 4.0),
             ),
-        ]
+        )
 
-    def get_resets(self, physics_model: ksim.PhysicsModel) -> list[ksim.Reset]:
-        return [
+    def get_resets(self, physics_model: ksim.PhysicsModel) -> tuple[ksim.Reset, ...]:
+        return (
             ksim.RandomJointPositionReset.create(physics_model, {k: v for k, v, _ in JOINT_BIASES}, scale=0.0),
             ksim.RandomJointVelocityReset(),
             # ksim.RandomHeadingReset(), # because only naive forward reward is used at the moment
-        ]
+        )
 
     def get_observations(self, physics_model: ksim.PhysicsModel) -> list[ksim.Observation]:
         obs_list = [

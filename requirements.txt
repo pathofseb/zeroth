@@ -1,8 +1,8 @@
 # requirements.txt
 
 # Training dependencies
-ksim==0.1.99
-xax==0.3.0
+ksim==0.1.95
+xax==0.3.5
 mujoco-scenes
 warp-lang
 
