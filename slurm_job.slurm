@@ -36,8 +36,8 @@ fi
 # Activate environment
 source activate ${ENV_PATH}
 
-# Install dependencies
-pip install -r requirements.txt
+# Install dependencies (force reinstall to ensure correct versions)
+pip install --force-reinstall -r requirements.txt
 pip install 'jax[cuda12]'  # If using GPU machine, install JAX CUDA libraries
 
 echo "Installed dependencies:"
@@ -51,8 +51,8 @@ python -c "import jax; print(jax.default_backend())"  # Should print "gpu"
 export MUJOCO_GL=osmesa
 echo "Set MUJOCO_GL=osmesa for headless rendering"
 
-# Run training
-python -m train load_from_ckpt_path=zbot_walking_task/run_6/checkpoints/ckpt.bin
+# Run training (start from scratch for 16-joint zeroth robot)
+python -m train
 
 
 
