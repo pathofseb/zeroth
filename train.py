@@ -24,12 +24,12 @@ from ksim.utils.mujoco import get_ctrl_data_idx_by_name
 
 logger = logging.getLogger(__name__)
 
-NUM_JOINTS = 20
+NUM_JOINTS = 16
 NUM_COMMANDS = 6
 
 ACTOR_DIM: dict[str, int] = dict(
-    joint_positions=20,
-    joint_velocity=20,
+    joint_positions=16,
+    joint_velocity=16,
     imu_orientation=4,
     cmd_linear_velocity=2,
     cmd_absolute_yaw=1,
@@ -37,48 +37,45 @@ ACTOR_DIM: dict[str, int] = dict(
 )
 
 CRITIC_DIM: dict[str, int] = dict(
-    joint_positions=20,
-    joint_velocity=20,
-    com_inertia=250,
-    com_velocity=150,
+    joint_positions=16,
+    joint_velocity=16,
+    com_inertia=190,  # Actual size for 16 joints + IMU link
+    com_velocity=114,  # Actual size for 16 joints + IMU link
     imu_acc=3,
     imu_gyro=3,
     imu_quat=4,
     cmd_all=7,
-    act_force=20,
+    act_force=16,
     base_pos=3,
     base_quat=4,
 )
 
-NUM_ACTOR_INPUTS = sum(ACTOR_DIM.values())  # 50
-NUM_CRITIC_INPUTS = sum(CRITIC_DIM.values())  # 484
+NUM_ACTOR_INPUTS = sum(ACTOR_DIM.values())  # 42 (16+16+4+2+1+3)
+NUM_CRITIC_INPUTS = sum(CRITIC_DIM.values())  # 376 (16+16+190+114+3+3+4+7+16+3+4)
 
 COMMAND_NAME = "zero_command"
 
 
 # These are in the order of the neural network outputs.
 # (joint_name, reference_angle_rad, weight)
+# Order matches the actuator order in robot.mjcf
 JOINT_BIASES: list[tuple[str, float, float]] = [
-    ("right_hip_yaw", 0.0, 1.0),  # 0
-    ("right_hip_roll", -0.1, 1.0),  # 1
-    ("right_hip_pitch", -0.4, 0.01),  # 2
-    ("right_knee_pitch", -0.8, 0.01),  # 3
-    ("right_ankle_pitch", -0.4, 0.01),  # 4
-    ("right_ankle_roll", -0.1, 0.01),  # 5
-    ("left_hip_yaw", 0.0, 1.0),  # 6
-    ("left_hip_roll", 0.1, 1.0),  # 7
-    ("left_hip_pitch", -0.4, 0.01),  # 8
-    ("left_knee_pitch", -0.8, 0.01),  # 9
-    ("left_ankle_pitch", -0.4, 0.01),  # 10
-    ("left_ankle_roll", 0.1, 0.01),  # 11
-    ("left_shoulder_pitch", 0.0, 1.0),  # 12
-    ("left_shoulder_roll", 0.2, 1.0),  # 13
-    ("left_elbow_roll", -0.2, 1.0),  # 14
-    ("left_gripper_roll", 0.0, 1.0),  # 15
-    ("right_shoulder_pitch", 0.0, 1.0),  # 16
-    ("right_shoulder_roll", -0.2, 1.0),  # 17
-    ("right_elbow_roll", 0.2, 1.0),  # 18
-    ("right_gripper_roll", 0.0, 1.0),  # 19
+    ("right_shoulder_pitch", 0.0, 1.0),  # 0, range=[-1.745329, 1.745329]
+    ("right_shoulder_yaw", 0.0, 1.0),  # 1, range=[-1.134464, 0.872665]
+    ("right_elbow_yaw", 0.0, 1.0),  # 2, range=[-1.570796, 1.570796]
+    ("left_shoulder_pitch", 0.0, 1.0),  # 3, range=[-1.745329, 1.745329]
+    ("left_shoulder_yaw", 0.0, 1.0),  # 4, range=[-1.134464, 0.872665]
+    ("left_elbow_yaw", 0.0, 1.0),  # 5, range=[-1.570796, 1.570796]
+    ("right_hip_pitch", -0.0471, 0.01),  # 6, range=[-1.570796, 1.570796]
+    ("right_hip_yaw", -0.0951, 1.0),  # 7, range=[-1.570796, 0.087266]
+    ("right_hip_roll", -0.785, 1.0),  # 8, range=[-0.785398, 0.785398]
+    ("right_knee_pitch", -2.98, 0.01),  # 9, range=[-4.712389, -1.570796]
+    ("right_ankle_pitch", 0.298, 0.01),  # 10, range=[-1.570796, 1.570796]
+    ("left_hip_pitch", 0.0943, 0.01),  # 11, range=[-1.570796, 1.570796]
+    ("left_hip_yaw", -0.0951, 1.0),  # 12, range=[-1.570796, 0.087266]
+    ("left_hip_roll", 0.785, 1.0),  # 13, range=[-0.785398, 0.785398]
+    ("left_knee_pitch", 0.0943, 0.01),  # 14, range=[-1.570796, 1.570796]
+    ("left_ankle_pitch", 0.0157, 0.01),  # 15, range=[-1.570796, 1.570796]
 ]
 
 
@@ -605,10 +602,8 @@ class AnkleKneePenalty(JointPositionPenalty):
             names=[
                 "left_knee_pitch",
                 "left_ankle_pitch",
-                "left_ankle_roll",
                 "right_knee_pitch",
                 "right_ankle_pitch",
-                "right_ankle_roll",
             ],
             physics_model=physics_model,
             scale=scale,
@@ -630,13 +625,11 @@ class ArmPosePenalty(JointPositionPenalty):
         return cls.create_from_names(
             names=[
                 "left_shoulder_pitch",
-                "left_shoulder_roll",
-                "left_elbow_roll",
-                "left_gripper_roll",
+                "left_shoulder_yaw",
+                "left_elbow_yaw",
                 "right_shoulder_pitch",
-                "right_shoulder_roll",
-                "right_elbow_roll",
-                "right_gripper_roll",
+                "right_shoulder_yaw",
+                "right_elbow_yaw",
             ],
             physics_model=physics_model,
             scale=scale,
@@ -1321,18 +1314,62 @@ class ZbotWalkingTask(ksim.PPOTask[ZbotWalkingTaskConfig]):
         return optimizer
 
     def get_mujoco_model(self) -> mujoco.MjModel:
-        mjcf_path = asyncio.run(ksim.get_mujoco_model_path("zbot", name="robot"))
+        # Load local robot.mjcf file for zeroth robot (16 joints)
+        import os
+        mjcf_path = os.path.join(os.path.dirname(__file__), "robot.mjcf")
         model = mujoco_scenes.mjcf.load_mjmodel(mjcf_path, scene="smooth")
         names_to_idxs = ksim.get_geom_data_idx_by_name(model)
         model.geom_priority[names_to_idxs["floor"]] = 2.0
         return model
 
     def get_mujoco_model_metadata(self, mj_model: mujoco.MjModel) -> Metadata:
-        metadata = asyncio.run(ksim.get_mujoco_model_metadata("zbot"))
-        # Ensure we're returning a proper RobotURDFMetadataOutput
-        if not isinstance(metadata, Metadata):
-            raise ValueError("Metadata is not a Metadata")
-        return metadata
+        # Load local metadata.json file
+        import os
+        import json
+        from ksim.types import JointMetadata, ActuatorMetadata
+
+        metadata_path = os.path.join(os.path.dirname(__file__), "metadata.json")
+        with open(metadata_path, "r") as f:
+            metadata_dict = json.load(f)
+
+        # Convert joint metadata dicts to JointMetadata objects
+        joint_name_to_metadata = {}
+        for joint_name, joint_data in metadata_dict["joint_name_to_metadata"].items():
+            joint_name_to_metadata[joint_name] = JointMetadata(
+                kp=joint_data.get("kp"),
+                kd=joint_data.get("kd"),
+                armature=joint_data.get("armature"),
+                friction=joint_data.get("friction"),
+                actuator_type=joint_data.get("actuator_type"),
+                soft_torque_limit=joint_data.get("soft_torque_limit"),
+            )
+
+        # Convert actuator metadata dicts to ActuatorMetadata objects
+        actuator_type_to_metadata = {}
+        for actuator_type, actuator_data in metadata_dict["actuator_type_to_metadata"].items():
+            actuator_type_to_metadata[actuator_type] = ActuatorMetadata(
+                actuator_type=actuator_data.get("actuator_type"),
+                sys_id=actuator_data.get("sysid"),  # Note: JSON has "sysid" but dataclass expects "sys_id"
+                max_torque=actuator_data.get("max_torque"),
+                armature=actuator_data.get("armature"),
+                damping=actuator_data.get("damping"),
+                frictionloss=actuator_data.get("frictionloss"),
+                vin=actuator_data.get("vin"),
+                kt=actuator_data.get("kt"),
+                R=actuator_data.get("R"),
+                vmax=actuator_data.get("vmax"),
+                amax=actuator_data.get("amax"),
+                max_velocity=actuator_data.get("max_velocity"),
+                max_pwm=actuator_data.get("max_pwm"),
+                error_gain=actuator_data.get("error_gain"),
+            )
+
+        # Create Metadata object
+        return Metadata(
+            joint_name_to_metadata=joint_name_to_metadata,
+            actuator_type_to_metadata=actuator_type_to_metadata,
+            control_frequency=metadata_dict.get("control_frequency"),
+        )
 
     def get_actuators(
         self,
@@ -1513,8 +1550,8 @@ class ZbotWalkingTask(ksim.PPOTask[ZbotWalkingTaskConfig]):
             ksim.SensorObservation.create(physics_model=physics_model, sensor_name="right_foot_force", noise=0.0),
             FeetPositionObservation.create(
                 physics_model=physics_model,
-                foot_left_site_name="left_foot",
-                foot_right_site_name="right_foot",
+                foot_left_site_name="left_ankle_pitch_site",
+                foot_right_site_name="right_ankle_pitch_site",
                 floor_threshold=0.0,
                 in_robot_frame=True,
             ),
@@ -1561,6 +1598,8 @@ class ZbotWalkingTask(ksim.PPOTask[ZbotWalkingTaskConfig]):
             ),
             FeetOrientationReward.create(
                 physics_model,
+                left_name="foot_left",
+                right_name="foot_right",
                 target_rp=(0.0, 0.0),
                 error_scale=0.25,
                 scale=0.3,

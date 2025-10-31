@@ -26,3 +26,9 @@ dist/
 *.so
 out*/
 **/run_*/
+meshes/*.stl
+
+# Robot mesh files (large binary files)
+robot/assets/*.stl
+robot/assets/*.part
+*.stl
