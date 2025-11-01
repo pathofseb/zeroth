@@ -53,29 +53,30 @@ CRITIC_DIM: dict[str, int] = dict(
 NUM_ACTOR_INPUTS = sum(ACTOR_DIM.values())  # 42 (16+16+4+2+1+3)
 NUM_CRITIC_INPUTS = sum(CRITIC_DIM.values())  # 376 (16+16+190+114+3+3+4+7+16+3+4)
 
-COMMAND_NAME = "zero_command"
+COMMAND_NAME = "unified"
 
 
 # These are in the order of the neural network outputs.
 # (joint_name, reference_angle_rad, weight)
 # Order matches the actuator order in robot.mjcf
+# UPDATED: Match working train_HL.py config for zeroth robot
 JOINT_BIASES: list[tuple[str, float, float]] = [
-    ("right_shoulder_pitch", 0.0, 1.0),  # 0, range=[-1.745329, 1.745329]
+    ("right_shoulder_pitch", 0.3, 1.0),  # 0, range=[-1.745329, 1.745329]
     ("right_shoulder_yaw", 0.0, 1.0),  # 1, range=[-1.134464, 0.872665]
     ("right_elbow_yaw", 0.0, 1.0),  # 2, range=[-1.570796, 1.570796]
-    ("left_shoulder_pitch", 0.0, 1.0),  # 3, range=[-1.745329, 1.745329]
+    ("left_shoulder_pitch", 0.3, 1.0),  # 3, range=[-1.745329, 1.745329]
     ("left_shoulder_yaw", 0.0, 1.0),  # 4, range=[-1.134464, 0.872665]
     ("left_elbow_yaw", 0.0, 1.0),  # 5, range=[-1.570796, 1.570796]
-    ("right_hip_pitch", -0.0471, 0.01),  # 6, range=[-1.570796, 1.570796]
-    ("right_hip_yaw", -0.0951, 1.0),  # 7, range=[-1.570796, 0.087266]
+    ("right_hip_pitch", 0.2, 0.01),  # 6, SYMMETRIC now!
+    ("right_hip_yaw", 0.0, 1.0),  # 7, changed from -0.0951
     ("right_hip_roll", -0.785, 1.0),  # 8, range=[-0.785398, 0.785398]
-    ("right_knee_pitch", -2.98, 0.01),  # 9, range=[-4.712389, -1.570796]
-    ("right_ankle_pitch", 0.298, 0.01),  # 10, range=[-1.570796, 1.570796]
-    ("left_hip_pitch", 0.0943, 0.01),  # 11, range=[-1.570796, 1.570796]
-    ("left_hip_yaw", -0.0951, 1.0),  # 12, range=[-1.570796, 0.087266]
+    ("right_knee_pitch", -3.14, 0.01),  # 9, more bent from -2.98
+    ("right_ankle_pitch", 0.4, 0.01),  # 10, increased from 0.298
+    ("left_hip_pitch", 0.2, 0.01),  # 11, SYMMETRIC now!
+    ("left_hip_yaw", -0.2, 1.0),  # 12, changed from -0.0951
     ("left_hip_roll", 0.785, 1.0),  # 13, range=[-0.785398, 0.785398]
-    ("left_knee_pitch", 0.0943, 0.01),  # 14, range=[-1.570796, 1.570796]
-    ("left_ankle_pitch", 0.0157, 0.01),  # 15, range=[-1.570796, 1.570796]
+    ("left_knee_pitch", 0.0, 0.01),  # 14, straight from 0.0943
+    ("left_ankle_pitch", 0.0, 0.01),  # 15, straight from 0.0157
 ]
 
 
@@ -1572,8 +1573,16 @@ class ZbotWalkingTask(ksim.PPOTask[ZbotWalkingTaskConfig]):
 
     def get_commands(self, physics_model: ksim.PhysicsModel) -> list[ksim.Command]:
         return [
-            ConstantZeroCommand(
+            UnifiedCommand(
+                vx_range=(-0.8, 0.8),      # Forward/backward velocity
+                vy_range=(-0.5, 0.5),      # Left/right velocity
+                wz_range=(-0.8, 0.8),      # Turning velocity
+                bh_range=(-0.05, 0.05),    # Base height variation
+                bh_standing_range=(-0.03, 0.03),
+                rx_range=(-0.1, 0.1),      # Roll angle
+                ry_range=(-0.1, 0.1),      # Pitch angle
                 ctrl_dt=self.config.ctrl_dt,
+                switch_prob=0.02,          # 2% chance to switch command each step
             )
         ]
 
@@ -1587,11 +1596,11 @@ class ZbotWalkingTask(ksim.PPOTask[ZbotWalkingTaskConfig]):
                 index="y",
                 in_robot_frame=True,
                 norm="l1",
-                scale=-5.0,
+                scale=-1.0,  # Reduced from -5.0 (robot needs lateral motion for balance without ankle roll)
             ),
             SimpleSingleFootContactReward(scale=0.3, stand_still_threshold=None),
             FeetAirtimeReward(
-                scale=10.0,
+                scale=0.1,  # CRITICAL FIX: was 10.0, causing falling (robot rewarded for tipping over)
                 ctrl_dt=self.config.ctrl_dt,
                 touchdown_penalty=0.1,
                 stand_still_threshold=None,
@@ -1607,7 +1616,7 @@ class ZbotWalkingTask(ksim.PPOTask[ZbotWalkingTaskConfig]):
             FeetTooClosePenalty(
                 feet_pos_obs_key="feet_position_observation",
                 threshold_m=0.12,
-                scale=-0.5,
+                scale=-0.05,  # Reduced from -0.5 to match working config
             ),
             StraightLegPenalty.create_penalty(physics_model, scale=-0.5, scale_by_curriculum=True),
             AnkleKneePenalty.create_penalty(physics_model, scale=-0.025, scale_by_curriculum=True),
@@ -1618,7 +1627,7 @@ class ZbotWalkingTask(ksim.PPOTask[ZbotWalkingTaskConfig]):
                  scale=-0.03,
                  sensor_names=("sensor_observation_left_foot_force", "sensor_observation_right_foot_force"),
             ),
-            ArmPosePenalty.create_penalty(physics_model, scale=-2.00, scale_by_curriculum=True),
+            ArmPosePenalty.create_penalty(physics_model, scale=-0.5, scale_by_curriculum=True),  # Reduced from -2.0
             #ksim.ActionTrackingReward(
             #    error_scale=0.1,
             #    scale=0.4,
