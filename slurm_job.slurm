@@ -1,7 +1,7 @@
 #!/bin/sh
 #SBATCH --account=studiegrupper-cogito
 #SBATCH --job-name="ksim-zbot-train"
-#SBATCH --time=06:00:00
+#SBATCH --time=18:00:00
 #SBATCH --partition=GPUQ
 #SBATCH --gres=gpu:1
 #SBATCH --mem=40GB
@@ -52,12 +52,12 @@ export MUJOCO_GL=osmesa
 echo "Set MUJOCO_GL=osmesa for headless rendering"
 
 # Run training (start from scratch for 16-joint zeroth robot)
-python -m train
+# python -m train
 
 
 
 # Example: to load pretrained checkpoint and run in view mode, uncomment:
-# python -m train load_from_ckpt_path=assets/ckpt.bin run_mode=view
+python -m train load_from_ckpt_path=zbot_walking_task/run_9/checkpoints/ckpt.bin # run_mode=view
 
 conda deactivate
 
