@@ -90,11 +90,33 @@ has an incorrect size.
   actual size: 0 bytes
 
 
-Traceback (most recent call last):
-  File "/cluster/apps/eb/software/Anaconda3/2024.02-1/lib/python3.10/runpy.py", line 196, in _run_module_as_main
-    return _run_code(code, main_globals, None,
-  File "/cluster/apps/eb/software/Anaconda3/2024.02-1/lib/python3.10/runpy.py", line 86, in _run_code
-    exec(code, run_globals)
-  File "/cluster/work/sebasrb/zeroth-trainings/training_variants/train_walk1.py", line 11, in <module>
-    import distrax
-ModuleNotFoundError: No module named 'distrax'
+2025-11-02 17:22:43.805239: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1762100563.829282  210389 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1762100563.837236  210389 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1762100563.858752  210389 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1762100563.858798  210389 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1762100563.858815  210389 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1762100563.858827  210389 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+/cluster/work/sebasrb/zeroth-trainings/env/lib/python3.11/site-packages/xax/utils/experiments.py:32: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+/cluster/work/sebasrb/zeroth-trainings/training_variants/train_walk1.py:882: UserWarning: `equinox.static_field` is deprecated in favour of `equinox.field(static=True)`
+  num_inputs: int = eqx.static_field()
+/cluster/work/sebasrb/zeroth-trainings/training_variants/train_walk1.py:883: UserWarning: `equinox.static_field` is deprecated in favour of `equinox.field(static=True)`
+  num_outputs: int = eqx.static_field()
+/cluster/work/sebasrb/zeroth-trainings/training_variants/train_walk1.py:884: UserWarning: `equinox.static_field` is deprecated in favour of `equinox.field(static=True)`
+  num_mixtures: int = eqx.static_field()
+/cluster/work/sebasrb/zeroth-trainings/training_variants/train_walk1.py:885: UserWarning: `equinox.static_field` is deprecated in favour of `equinox.field(static=True)`
+  min_std: float = eqx.static_field()
+/cluster/work/sebasrb/zeroth-trainings/training_variants/train_walk1.py:886: UserWarning: `equinox.static_field` is deprecated in favour of `equinox.field(static=True)`
+  max_std: float = eqx.static_field()
+/cluster/work/sebasrb/zeroth-trainings/training_variants/train_walk1.py:887: UserWarning: `equinox.static_field` is deprecated in favour of `equinox.field(static=True)`
+  var_scale: float = eqx.static_field()
+2025-11-02 17:23:06.876123: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1762100586.899829  210412 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1762100586.907691  210412 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1762100586.928954  210412 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1762100586.928999  210412 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1762100586.929015  210412 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1762100586.929027  210412 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
