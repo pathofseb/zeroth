@@ -53,18 +53,18 @@ ${PIP_BIN} install --force-reinstall -r requirements.txt
 ${PIP_BIN} install 'jax[cuda12]'  # If using GPU machine, install JAX CUDA libraries
 
 echo "Installed dependencies:"
-pip freeze
+${PIP_BIN} freeze
 
 # Verify GPU backend
 echo "Checking JAX backend:"
-python -c "import jax; print(jax.default_backend())"  # Should print "gpu"
+${PYTHON_BIN} -c "import jax; print(jax.default_backend())"  # Should print "gpu"
 
 # Set MuJoCo to use headless rendering backend (osmesa)
 export MUJOCO_GL=osmesa
 echo "Set MUJOCO_GL=osmesa for headless rendering"
 
 # Run training (VARIANT 1: Baseline Adjusted - FeetAirtimeReward fixed)
-python -m training_variants.train_walk1
+${PYTHON_BIN} -m training_variants.train_walk1
 
 
 
