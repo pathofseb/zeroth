@@ -1317,7 +1317,7 @@ class ZbotWalkingTask(ksim.PPOTask[ZbotWalkingTaskConfig]):
     def get_mujoco_model(self) -> mujoco.MjModel:
         # Load local robot.mjcf file for zeroth robot (16 joints)
         import os
-        mjcf_path = os.path.join(os.path.dirname(__file__), "robot.mjcf")
+        mjcf_path = os.path.join(os.path.dirname(__file__), "..", "robot.mjcf")
         model = mujoco_scenes.mjcf.load_mjmodel(mjcf_path, scene="smooth")
         names_to_idxs = ksim.get_geom_data_idx_by_name(model)
         model.geom_priority[names_to_idxs["floor"]] = 2.0
@@ -1329,7 +1329,7 @@ class ZbotWalkingTask(ksim.PPOTask[ZbotWalkingTaskConfig]):
         import json
         from ksim.types import JointMetadata, ActuatorMetadata
 
-        metadata_path = os.path.join(os.path.dirname(__file__), "metadata.json")
+        metadata_path = os.path.join(os.path.dirname(__file__), "..", "metadata.json")
         with open(metadata_path, "r") as f:
             metadata_dict = json.load(f)
 

@@ -848,8 +848,8 @@ class ImuOrientationObservation(ksim.StatefulObservation):
         # # BUG? noise is added twice? also in ksim rl.py
         # framequat_data = add_noise(framequat_data, rng, "gaussian", self.noise, curriculum_level)
 
-        # get heading cmd
-        heading_yaw_cmd = state.commands[COMMAND_NAME][3]
+        # get heading cmd - for zero command, just use 0.0 as heading
+        heading_yaw_cmd = 0.0 if COMMAND_NAME == "zero_command" else state.commands[COMMAND_NAME][3]
 
         # spin back
         heading_yaw_cmd_quat = xax.euler_to_quat(jnp.array([0.0, 0.0, heading_yaw_cmd]))
@@ -1317,7 +1317,8 @@ class ZbotWalkingTask(ksim.PPOTask[ZbotWalkingTaskConfig]):
     def get_mujoco_model(self) -> mujoco.MjModel:
         # Load local robot.mjcf file for zeroth robot (16 joints)
         import os
-        mjcf_path = os.path.join(os.path.dirname(__file__), "robot.mjcf")
+        # robot.mjcf is in the parent directory (project root)
+        mjcf_path = os.path.join(os.path.dirname(__file__), "..", "robot.mjcf")
         model = mujoco_scenes.mjcf.load_mjmodel(mjcf_path, scene="smooth")
         names_to_idxs = ksim.get_geom_data_idx_by_name(model)
         model.geom_priority[names_to_idxs["floor"]] = 2.0
@@ -1329,7 +1330,8 @@ class ZbotWalkingTask(ksim.PPOTask[ZbotWalkingTaskConfig]):
         import json
         from ksim.types import JointMetadata, ActuatorMetadata
 
-        metadata_path = os.path.join(os.path.dirname(__file__), "metadata.json")
+        # metadata.json is in the parent directory (project root)
+        metadata_path = os.path.join(os.path.dirname(__file__), "..", "metadata.json")
         with open(metadata_path, "r") as f:
             metadata_dict = json.load(f)
 
