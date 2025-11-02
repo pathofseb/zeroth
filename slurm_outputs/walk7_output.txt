@@ -1,7 +1,7 @@
 Running from directory: /cluster/work/sebasrb
 Job name: zbot-train-walk7
-Job ID: 23197169
-Node(s): idun-07-09
+Job ID: 23197219
+Node(s): idun-07-04
 Removing old environment...
 Creating Python 3.11 environment...
 Channels:
@@ -12,7 +12,7 @@ Solving environment: ...working... done
 
 ## Package Plan ##
 
-  environment location: /cluster/work/sebasrb/zeroth-trainings/ksim-env
+  environment location: /cluster/work/sebasrb/zeroth-trainings/env
 
   added / updated specs:
     - python=3.11
@@ -55,12 +55,12 @@ The following NEW packages will be INSTALLED:
 
 
 Downloading and Extracting Packages: ...working... done
-Preparing transaction: - \ | / - done
-Verifying transaction: | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - done
-Executing transaction: | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | done
-Rolling back transaction: - \ | / - \ | / - \ | / - done
-Python version: 
-Python path: /cluster/work/sebasrb/zeroth-trainings/ksim-env//bin/python
+Preparing transaction: - \ | / done
+Verifying transaction: \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ done
+Executing transaction: / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / done
+Rolling back transaction: \ | done
+Python version: Python 3.11.14
+Python path: /cluster/work/sebasrb/zeroth-trainings/env//bin/python
 Installed dependencies:
 aiobotocore @ file:///croot/aiobotocore_1714464387507/work
 aiohappyeyeballs @ file:///croot/aiohappyeyeballs_1725434011349/work
