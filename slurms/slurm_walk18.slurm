@@ -30,13 +30,20 @@ ENV_PATH="/cluster/work/$USER/zeroth-trainings/ksim-env/"
 module purge
 module load Anaconda3/2024.02-1
 
+# Initialize conda for bash
+eval "$(conda shell.bash hook)"
+
 # Create conda environment if it doesn't exist
 if [ ! -d "$ENV_PATH" ]; then
   conda create -y --prefix ${ENV_PATH} python=3.11
 fi
 
 # Activate environment
-source activate ${ENV_PATH}
+conda activate ${ENV_PATH}
+
+# Verify we're using the right Python
+echo "Python version: $(python --version)"
+echo "Python path: $(which python)"
 
 # Install dependencies (force reinstall to ensure correct versions)
 pip install --force-reinstall -r requirements.txt
