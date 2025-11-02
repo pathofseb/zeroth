@@ -120,3 +120,59 @@ W0000 00:00:1762100586.928954  210412 computation_placer.cc:177] computation pla
 W0000 00:00:1762100586.928999  210412 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
 W0000 00:00:1762100586.929015  210412 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
 W0000 00:00:1762100586.929027  210412 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+/cluster/work/sebasrb/zeroth-trainings/env/lib/python3.11/site-packages/xax/utils/experiments.py:32: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+/cluster/work/sebasrb/zeroth-trainings/training_variants/train_walk1.py:882: UserWarning: `equinox.static_field` is deprecated in favour of `equinox.field(static=True)`
+  num_inputs: int = eqx.static_field()
+/cluster/work/sebasrb/zeroth-trainings/training_variants/train_walk1.py:883: UserWarning: `equinox.static_field` is deprecated in favour of `equinox.field(static=True)`
+  num_outputs: int = eqx.static_field()
+/cluster/work/sebasrb/zeroth-trainings/training_variants/train_walk1.py:884: UserWarning: `equinox.static_field` is deprecated in favour of `equinox.field(static=True)`
+  num_mixtures: int = eqx.static_field()
+/cluster/work/sebasrb/zeroth-trainings/training_variants/train_walk1.py:885: UserWarning: `equinox.static_field` is deprecated in favour of `equinox.field(static=True)`
+  min_std: float = eqx.static_field()
+/cluster/work/sebasrb/zeroth-trainings/training_variants/train_walk1.py:886: UserWarning: `equinox.static_field` is deprecated in favour of `equinox.field(static=True)`
+  max_std: float = eqx.static_field()
+/cluster/work/sebasrb/zeroth-trainings/training_variants/train_walk1.py:887: UserWarning: `equinox.static_field` is deprecated in favour of `equinox.field(static=True)`
+  var_scale: float = eqx.static_field()
+2025-11-02 17:23:30.398914: I external/xla/xla/pjrt/pjrt_api.cc:118] GetPjrtApi was found for cuda at /cluster/home/sebasrb/.local/lib/python3.11/site-packages/jax_plugins/xla_cuda12/xla_cuda_plugin.so
+2025-11-02 17:23:30.399518: I external/xla/xla/pjrt/pjrt_api.cc:96] PJRT_Api is set for device type cuda
+INFO:2025-11-02 17:23:30,404:jax._src.xla_bridge:822: Unable to initialize backend 'tpu': INTERNAL: Failed to open libtpu.so: libtpu.so: cannot open shared object file: No such file or directory
+2025-11-02 17:23:30.405346: I external/xla/xla/pjrt/pjrt_api.cc:167] The PJRT plugin has PJRT API version 0.75. The framework PJRT API version is 0.75.
+2025-11-02 17:23:30.681508: I external/xla/xla/service/service.cc:163] XLA service 0xb7b9370 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2025-11-02 17:23:30.681608: I external/xla/xla/service/service.cc:171]   StreamExecutor device (0): NVIDIA A100-PCIE-40GB, Compute Capability 8.0
+2025-11-02 17:23:30.695778: I external/xla/xla/stream_executor/cuda/cuda_dnn.cc:473] Loaded cuDNN version 91301
+2025-11-02 17:23:30.696174: I external/xla/xla/pjrt/pjrt_c_api_client.cc:133] PjRtCApiClient created.
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/cluster/work/sebasrb/zeroth-trainings/training_variants/train_walk1.py", line 1817, in <module>
+    ZbotWalkingTask.launch(
+  File "/cluster/work/sebasrb/zeroth-trainings/env/lib/python3.11/site-packages/xax/task/mixins/runnable.py", line 50, in launch
+    launcher.launch(cls, *cfgs, use_cli=use_cli)
+  File "/cluster/work/sebasrb/zeroth-trainings/env/lib/python3.11/site-packages/xax/task/launchers/cli.py", line 40, in launch
+    SingleProcessLauncher().launch(task, *cfgs, use_cli=use_cli_next)
+  File "/cluster/work/sebasrb/zeroth-trainings/env/lib/python3.11/site-packages/xax/task/launchers/single_process.py", line 31, in launch
+    run_single_process_training(task, *cfgs, use_cli=use_cli)
+  File "/cluster/work/sebasrb/zeroth-trainings/env/lib/python3.11/site-packages/xax/task/launchers/single_process.py", line 21, in run_single_process_training
+    task_obj.run()
+  File "/cluster/work/sebasrb/zeroth-trainings/env/lib/python3.11/site-packages/ksim/task/rl.py", line 1026, in run
+    self.run_training()
+  File "/cluster/work/sebasrb/zeroth-trainings/env/lib/python3.11/site-packages/ksim/task/rl.py", line 2153, in run_training
+    mj_model: PhysicsModel = self.get_mujoco_model()
+                             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/work/sebasrb/zeroth-trainings/training_variants/train_walk1.py", line 1321, in get_mujoco_model
+    model = mujoco_scenes.mjcf.load_mjmodel(mjcf_path, scene="smooth")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/work/sebasrb/zeroth-trainings/env/lib/python3.11/site-packages/mujoco_scenes/mjcf.py", line 184, in load_mjmodel
+    elem = ET.fromstring(epath.Path(path).read_text())
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/work/sebasrb/zeroth-trainings/env/lib/python3.11/site-packages/etils/epath/abstract_path.py", line 150, in read_text
+    with self.open('r', encoding=encoding) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/work/sebasrb/zeroth-trainings/env/lib/python3.11/site-packages/etils/epath/gpath.py", line 257, in open
+    gfile = self._backend.open(self._path_str, mode)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cluster/work/sebasrb/zeroth-trainings/env/lib/python3.11/site-packages/etils/epath/backend.py", line 133, in open
+    return open(path, mode, encoding=encoding)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/cluster/work/sebasrb/zeroth-trainings/training_variants/robot.mjcf'
