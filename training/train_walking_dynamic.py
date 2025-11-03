@@ -852,7 +852,7 @@ class ImuOrientationObservation(ksim.StatefulObservation):
         # framequat_data = add_noise(framequat_data, rng, "gaussian", self.noise, curriculum_level)
 
         # get heading cmd
-        heading_yaw_cmd = state.commands[COMMAND_NAME][3]
+        heading_yaw_cmd = 0.0 if COMMAND_NAME == "zero_command" else state.commands[COMMAND_NAME][3]
 
         # spin back
         heading_yaw_cmd_quat = xax.euler_to_quat(jnp.array([0.0, 0.0, heading_yaw_cmd]))
