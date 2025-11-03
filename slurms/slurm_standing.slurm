@@ -30,43 +30,31 @@ ENV_PATH="/cluster/work/$USER/zeroth-trainings/env/"
 module purge
 module load Anaconda3/2024.02-1
 
-# Remove old environment if it exists (to ensure Python 3.11)
-if [ -d "$ENV_PATH" ]; then
-  echo "Removing old environment..."
-  rm -rf ${ENV_PATH}
+# Create conda environment if it doesn't exist
+if [ ! -d "$ENV_PATH" ]; then
+  conda create -y --prefix ${ENV_PATH} python=3.11
 fi
 
-# Create fresh conda environment with Python 3.11
-echo "Creating Python 3.11 environment..."
-conda create -y --prefix ${ENV_PATH} python=3.11
-
 # Use Python directly from the environment (don't rely on activation)
-PYTHON_BIN="${ENV_PATH}/bin/python"
-PIP_BIN="${ENV_PATH}/bin/pip"
-
-# Verify we're using the right Python
-echo "Python version: $(${PYTHON_BIN} --version)"
-echo "Python path: ${PYTHON_BIN}"
+source activate ${ENV_PATH}
 
 # Install dependencies
-${PIP_BIN} install --force-reinstall -r requirements.txt
-${PIP_BIN} install 'jax[cuda12]'  # If using GPU machine, install JAX CUDA libraries
+pip install -r requirements.txt
+pip install 'jax[cuda12]'  # If using GPU machine, install JAX CUDA libraries
 
 echo "Installed dependencies:"
 pip freeze
 
 # Verify GPU backend
 echo "Checking JAX backend:"
-${PYTHON_BIN} -c "import jax; print(jax.default_backend())"  # Should print "gpu"
+python -c "import jax; print(jax.default_backend())"  # Should print "gpu"
 
 # Set MuJoCo to use headless rendering backend (osmesa)
 export MUJOCO_GL=osmesa
 echo "Set MUJOCO_GL=osmesa for headless rendering"
 
-# Run training (STANDING variant - focus on standing still)
-${PYTHON_BIN} -m training.train_standing
-
-
+# Run training
+python -m training.train_standing
 
 # Example: to load pretrained checkpoint and run in view mode, uncomment:
 # python -m train load_from_ckpt_path=zbot_walking_task/run_9/checkpoints/ckpt.bin # run_mode=view
