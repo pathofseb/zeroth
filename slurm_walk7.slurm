@@ -24,7 +24,7 @@ echo "Node(s): $SLURM_JOB_NODELIST"
 mkdir -p slurm_outputs
 
 # Path to your conda env (change if needed)
-ENV_PATH="/cluster/work/$USER/zeroth-trainings/env/"
+ENV_PATH="/cluster/work/$USER/zeroth/env/"
 
 module purge
 module load Anaconda3/2024.02-1
