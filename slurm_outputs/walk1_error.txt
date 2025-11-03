@@ -1,0 +1,45 @@
+Traceback (most recent call last):
+  File "/cluster/work/sebasrb/zeroth-trainings/env/bin/pip", line 6, in <module>
+    from pip._internal.cli.main import main
+  File "/cluster/work/sebasrb/zeroth-trainings/env/lib/python3.11/site-packages/pip/_internal/cli/main.py", line 11, in <module>
+    from pip._internal.cli.autocompletion import autocomplete
+  File "/cluster/work/sebasrb/zeroth-trainings/env/lib/python3.11/site-packages/pip/_internal/cli/autocompletion.py", line 12, in <module>
+    from pip._internal.cli.main_parser import create_main_parser
+  File "/cluster/work/sebasrb/zeroth-trainings/env/lib/python3.11/site-packages/pip/_internal/cli/main_parser.py", line 9, in <module>
+    from pip._internal.build_env import get_runnable_pip
+  File "/cluster/work/sebasrb/zeroth-trainings/env/lib/python3.11/site-packages/pip/_internal/build_env.py", line 19, in <module>
+    from pip._internal.cli.spinners import open_spinner
+ImportError: cannot import name 'open_spinner' from 'pip._internal.cli.spinners' (/cluster/work/sebasrb/zeroth-trainings/env/lib/python3.11/site-packages/pip/_internal/cli/spinners.py)
+Traceback (most recent call last):
+  File "/cluster/work/sebasrb/zeroth-trainings/env/bin/pip", line 6, in <module>
+    from pip._internal.cli.main import main
+  File "/cluster/work/sebasrb/zeroth-trainings/env/lib/python3.11/site-packages/pip/_internal/cli/main.py", line 11, in <module>
+    from pip._internal.cli.autocompletion import autocomplete
+  File "/cluster/work/sebasrb/zeroth-trainings/env/lib/python3.11/site-packages/pip/_internal/cli/autocompletion.py", line 12, in <module>
+    from pip._internal.cli.main_parser import create_main_parser
+  File "/cluster/work/sebasrb/zeroth-trainings/env/lib/python3.11/site-packages/pip/_internal/cli/main_parser.py", line 9, in <module>
+    from pip._internal.build_env import get_runnable_pip
+  File "/cluster/work/sebasrb/zeroth-trainings/env/lib/python3.11/site-packages/pip/_internal/build_env.py", line 19, in <module>
+    from pip._internal.cli.spinners import open_spinner
+ImportError: cannot import name 'open_spinner' from 'pip._internal.cli.spinners' (/cluster/work/sebasrb/zeroth-trainings/env/lib/python3.11/site-packages/pip/_internal/cli/spinners.py)
+Traceback (most recent call last):
+  File "/cluster/work/sebasrb/zeroth-trainings/env/bin/pip", line 6, in <module>
+    from pip._internal.cli.main import main
+  File "/cluster/work/sebasrb/zeroth-trainings/env/lib/python3.11/site-packages/pip/_internal/cli/main.py", line 11, in <module>
+    from pip._internal.cli.autocompletion import autocomplete
+  File "/cluster/work/sebasrb/zeroth-trainings/env/lib/python3.11/site-packages/pip/_internal/cli/autocompletion.py", line 12, in <module>
+    from pip._internal.cli.main_parser import create_main_parser
+  File "/cluster/work/sebasrb/zeroth-trainings/env/lib/python3.11/site-packages/pip/_internal/cli/main_parser.py", line 9, in <module>
+    from pip._internal.build_env import get_runnable_pip
+  File "/cluster/work/sebasrb/zeroth-trainings/env/lib/python3.11/site-packages/pip/_internal/build_env.py", line 19, in <module>
+    from pip._internal.cli.spinners import open_spinner
+ImportError: cannot import name 'open_spinner' from 'pip._internal.cli.spinners' (/cluster/work/sebasrb/zeroth-trainings/env/lib/python3.11/site-packages/pip/_internal/cli/spinners.py)
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+ModuleNotFoundError: No module named 'jax'
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/cluster/work/sebasrb/zeroth/training_variants/train_walk1.py", line 8, in <module>
+    from typing_extensions import Self, TypedDict
+ModuleNotFoundError: No module named 'typing_extensions'

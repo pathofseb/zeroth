@@ -1,0 +1,9 @@
+Running from directory: 
+Job name: zbot-train-walk1
+Job ID: 23198624
+Node(s): idun-07-05
+Installed dependencies:
+Checking JAX backend:
+Set MUJOCO_GL=osmesa for headless rendering
+Warning: Could not find run directory
+Job finished
