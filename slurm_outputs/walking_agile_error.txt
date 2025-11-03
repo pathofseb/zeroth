@@ -1,11 +1,11 @@
-2025-11-03 10:48:46.000434: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-11-03 11:11:56.886495: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
-E0000 00:00:1762163326.094254  906901 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
-E0000 00:00:1762163326.128448  906901 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
-W0000 00:00:1762163326.325087  906901 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
-W0000 00:00:1762163326.325124  906901 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
-W0000 00:00:1762163326.325135  906901 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
-W0000 00:00:1762163326.325145  906901 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+E0000 00:00:1762164717.111274 3440265 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1762164717.177643 3440265 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1762164717.362200 3440265 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1762164717.362231 3440265 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1762164717.362241 3440265 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1762164717.362248 3440265 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
 /cluster/work/sebasrb/zeroth/env/lib/python3.11/site-packages/xax/utils/experiments.py:32: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
   import pkg_resources
 /cluster/work/sebasrb/zeroth/training/train_walking_agile.py:885: UserWarning: `equinox.static_field` is deprecated in favour of `equinox.field(static=True)`
@@ -20,14 +20,14 @@ W0000 00:00:1762163326.325145  906901 computation_placer.cc:177] computation pla
   max_std: float = eqx.static_field()
 /cluster/work/sebasrb/zeroth/training/train_walking_agile.py:890: UserWarning: `equinox.static_field` is deprecated in favour of `equinox.field(static=True)`
   var_scale: float = eqx.static_field()
-2025-11-03 10:49:42.167938: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-11-03 11:12:20.573527: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
-E0000 00:00:1762163382.181365  907465 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
-E0000 00:00:1762163382.185971  907465 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
-W0000 00:00:1762163382.199144  907465 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
-W0000 00:00:1762163382.199172  907465 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
-W0000 00:00:1762163382.199182  907465 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
-W0000 00:00:1762163382.199192  907465 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+E0000 00:00:1762164740.591030 3440325 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1762164740.596495 3440325 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1762164740.610665 3440325 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1762164740.610707 3440325 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1762164740.610715 3440325 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1762164740.610721 3440325 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
 /cluster/work/sebasrb/zeroth/env/lib/python3.11/site-packages/xax/utils/experiments.py:32: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
   import pkg_resources
 /cluster/work/sebasrb/zeroth/training/train_walking_agile.py:885: UserWarning: `equinox.static_field` is deprecated in favour of `equinox.field(static=True)`
@@ -42,35 +42,33 @@ W0000 00:00:1762163382.199192  907465 computation_placer.cc:177] computation pla
   max_std: float = eqx.static_field()
 /cluster/work/sebasrb/zeroth/training/train_walking_agile.py:890: UserWarning: `equinox.static_field` is deprecated in favour of `equinox.field(static=True)`
   var_scale: float = eqx.static_field()
-2025-11-03 10:49:58.483965: I external/xla/xla/pjrt/pjrt_api.cc:118] GetPjrtApi was found for cuda at /cluster/work/sebasrb/zeroth/env/lib/python3.11/site-packages/jax_plugins/xla_cuda12/xla_cuda_plugin.so
-2025-11-03 10:49:58.484316: I external/xla/xla/pjrt/pjrt_api.cc:96] PJRT_Api is set for device type cuda
-INFO:2025-11-03 10:49:58,487:jax._src.xla_bridge:822: Unable to initialize backend 'tpu': INTERNAL: Failed to open libtpu.so: libtpu.so: cannot open shared object file: No such file or directory
-2025-11-03 10:49:58.488053: I external/xla/xla/pjrt/pjrt_api.cc:167] The PJRT plugin has PJRT API version 0.75. The framework PJRT API version is 0.75.
-2025-11-03 10:49:58.998461: I external/xla/xla/service/service.cc:163] XLA service 0xb20da70 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
-2025-11-03 10:49:58.998553: I external/xla/xla/service/service.cc:171]   StreamExecutor device (0): NVIDIA A100-SXM4-80GB, Compute Capability 8.0
-2025-11-03 10:49:59.008375: I external/xla/xla/stream_executor/cuda/cuda_dnn.cc:473] Loaded cuDNN version 91301
-2025-11-03 10:49:59.008631: I external/xla/xla/pjrt/pjrt_c_api_client.cc:133] PjRtCApiClient created.
-2025-11-03 10:50:36.326424: I external/xla/xla/stream_executor/cuda/subprocess_compilation.cc:349] ptxas warning : Registers are spilled to local memory in function 'input_reduce_fusion_2', 4 bytes spill stores, 4 bytes spill loads
-ptxas warning : Registers are spilled to local memory in function 'input_add_subtract_transpose_fusion', 12 bytes spill stores, 12 bytes spill loads
-ptxas warning : Registers are spilled to local memory in function 'input_transpose_fusion_5', 16 bytes spill stores, 16 bytes spill loads
-
-2025-11-03 10:50:48.035675: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
-2025-11-03 10:50:48.040403: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-11-03 11:12:36.900437: I external/xla/xla/pjrt/pjrt_api.cc:118] GetPjrtApi was found for cuda at /cluster/work/sebasrb/zeroth/env/lib/python3.11/site-packages/jax_plugins/xla_cuda12/xla_cuda_plugin.so
+2025-11-03 11:12:36.900847: I external/xla/xla/pjrt/pjrt_api.cc:96] PJRT_Api is set for device type cuda
+INFO:2025-11-03 11:12:36,904:jax._src.xla_bridge:822: Unable to initialize backend 'tpu': INTERNAL: Failed to open libtpu.so: libtpu.so: cannot open shared object file: No such file or directory
+2025-11-03 11:12:36.904189: I external/xla/xla/pjrt/pjrt_api.cc:167] The PJRT plugin has PJRT API version 0.75. The framework PJRT API version is 0.75.
+2025-11-03 11:12:37.262302: I external/xla/xla/service/service.cc:163] XLA service 0x9441c20 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2025-11-03 11:12:37.262347: I external/xla/xla/service/service.cc:171]   StreamExecutor device (0): NVIDIA H200, Compute Capability 9.0
+2025-11-03 11:12:37.297473: I external/xla/xla/stream_executor/cuda/cuda_dnn.cc:473] Loaded cuDNN version 91301
+2025-11-03 11:12:37.297757: I external/xla/xla/pjrt/pjrt_c_api_client.cc:133] PjRtCApiClient created.
+2025-11-03 11:12:51.195385: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-11-03 11:12:51.202343: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-11-03 11:12:51.245878: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-11-03 11:12:51.252347: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:467] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
-E0000 00:00:1762163448.087564  908459 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
-E0000 00:00:1762163448.092129  908459 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+E0000 00:00:1762164771.286554 3440635 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
 WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
-E0000 00:00:1762163448.096544  908458 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
-E0000 00:00:1762163448.101103  908458 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
-W0000 00:00:1762163448.140994  908458 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
-W0000 00:00:1762163448.141028  908458 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
-W0000 00:00:1762163448.141040  908458 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
-W0000 00:00:1762163448.141050  908458 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
-2025-11-03 10:50:48.144823: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
-To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
-W0000 00:00:1762163448.147821  908459 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
-W0000 00:00:1762163448.147855  908459 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
-W0000 00:00:1762163448.147867  908459 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
-W0000 00:00:1762163448.147877  908459 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
-2025-11-03 10:50:48.151423: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
-To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+E0000 00:00:1762164771.299995 3440634 cuda_dnn.cc:8579] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1762164771.305283 3440634 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+E0000 00:00:1762164771.312509 3440635 cuda_blas.cc:1407] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+W0000 00:00:1762164771.349933 3440635 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1762164771.349975 3440635 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1762164771.349981 3440635 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1762164771.349986 3440635 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1762164771.363460 3440634 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1762164771.363503 3440634 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1762164771.363509 3440634 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+W0000 00:00:1762164771.363514 3440634 computation_placer.cc:177] computation placer already registered. Please check linkage and avoid linking the same target more than once.
+2025-11-03 11:12:51.367801: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI AVX512_BF16 AVX512_FP16 AVX_VNNI AMX_TILE AMX_INT8 AMX_BF16 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2025-11-03 11:12:51.372108: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI AVX512_BF16 AVX512_FP16 AVX_VNNI AMX_TILE AMX_INT8 AMX_BF16 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
