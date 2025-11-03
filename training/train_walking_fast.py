@@ -56,7 +56,7 @@ CRITIC_DIM: dict[str, int] = dict(
 NUM_ACTOR_INPUTS = sum(ACTOR_DIM.values())  # 42 (16+16+4+2+1+3)
 NUM_CRITIC_INPUTS = sum(CRITIC_DIM.values())  # 376 (16+16+190+114+3+3+4+7+16+3+4)
 
-COMMAND_NAME = "unified"
+COMMAND_NAME = "zero_command"
 
 
 # These are in the order of the neural network outputs.
