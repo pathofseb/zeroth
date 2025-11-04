@@ -1584,7 +1584,7 @@ class ZbotWalkingTask(ksim.PPOTask[ZbotWalkingTaskConfig]):
         return [
             ksim.StayAliveReward(scale=1.0),
             ksim.UprightReward(scale=1.0),
-            ksim.NaiveForwardReward(scale=5.0, clip_min=None, clip_max=0.2),
+            ksim.NaiveForwardReward(scale=10.0, clip_min=None, clip_max=0.5),
             ksim.NaiveForwardOrientationReward(scale=0.3),
             ksim.LinearVelocityPenalty(
                 index="y",
@@ -1592,12 +1592,12 @@ class ZbotWalkingTask(ksim.PPOTask[ZbotWalkingTaskConfig]):
                 norm="l1",
                 scale=-5.0,
             ),
-            SimpleSingleFootContactReward(scale=0.3, stand_still_threshold=None),
+            SimpleSingleFootContactReward(scale=3.0, stand_still_threshold=0.01),
             FeetAirtimeReward(
-                scale=10.0,
+                scale=2.0,
                 ctrl_dt=self.config.ctrl_dt,
                 touchdown_penalty=0.1,
-                stand_still_threshold=None,
+                stand_still_threshold=0.01,
             ),
             FeetOrientationReward.create(
                 physics_model,
@@ -1631,7 +1631,7 @@ class ZbotWalkingTask(ksim.PPOTask[ZbotWalkingTaskConfig]):
             #ksim.ActionVelocityPenalty(scale=-2.0, scale_by_curriculum=True),
             ksim.ReachabilityPenalty(
                 delta_max_j=tuple(float(x) for x in self.delta_max_j),
-                scale=-1.0,
+                scale=-0.5,
                 squared=False,
                 scale_by_curriculum=True,
             ),
@@ -1642,6 +1642,7 @@ class ZbotWalkingTask(ksim.PPOTask[ZbotWalkingTaskConfig]):
             ksim.BadZTermination(unhealthy_z_lower=0.05, unhealthy_z_upper=0.5),
             ksim.NotUprightTermination(max_radians=math.radians(60)),
             ksim.EpisodeLengthTermination(max_length_sec=80),
+            ksim.MinimumVelocityTermination(min_velocity=0.05, time_threshold=2.0),
         ]
 
     def get_curriculum(self, physics_model: ksim.PhysicsModel) -> ksim.Curriculum:
