@@ -190,6 +190,7 @@ class UnifiedAbsoluteYawCommandMarker(ksim.vis.Marker):
 class UnifiedCommand(ksim.Command):
     """Unifiying all commands into one to allow for covariance control."""
 
+    command_name: str = attrs.field(default=COMMAND_NAME)
     vx_range: tuple[float, float] = attrs.field()
     vy_range: tuple[float, float] = attrs.field()
     wz_range: tuple[float, float] = attrs.field()
