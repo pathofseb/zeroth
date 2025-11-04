@@ -136,3 +136,4 @@ ERROR: TensorBoard could not bind to port 9249, it was already in use
 
 2025-11-03 10:55:56.813169: I external/xla/xla/stream_executor/cuda/subprocess_compilation.cc:349] ptxas warning : Registers are spilled to local memory in function 'input_add_reduce_select_fusion', 96 bytes spill stores, 96 bytes spill loads
 
+[2025-11-04T04:48:12.018] error: *** JOB 23198901 ON idun-08-02 CANCELLED AT 2025-11-04T04:48:12 DUE TO TIME LIMIT ***

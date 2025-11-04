@@ -100,3 +100,4 @@ To enable the following instructions: AVX2 AVX512F AVX512_VNNI FMA, in other ope
   max_std: float = eqx.static_field()
 /cluster/work/sebasrb/zeroth/training_variants/train_walk8.py:887: UserWarning: `equinox.static_field` is deprecated in favour of `equinox.field(static=True)`
   var_scale: float = eqx.static_field()
+[2025-11-04T04:48:12.045] error: *** JOB 23198906 ON idun-07-10 CANCELLED AT 2025-11-04T04:48:12 DUE TO TIME LIMIT ***

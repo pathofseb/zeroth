@@ -144,3 +144,4 @@ ptxas warning : Registers are spilled to local memory in function 'input_transpo
 ptxas warning : Registers are spilled to local memory in function 'input_reduce_fusion_96', 4 bytes spill stores, 4 bytes spill loads
 ptxas warning : Registers are spilled to local memory in function 'input_transpose_fusion_14', 16 bytes spill stores, 16 bytes spill loads
 
+[2025-11-04T04:48:12.109] error: *** JOB 23198916 ON idun-07-04 CANCELLED AT 2025-11-04T04:48:12 DUE TO TIME LIMIT ***

@@ -124,3 +124,4 @@ To enable the following instructions: AVX2 AVX512F AVX512_VNNI AVX512_BF16 AVX51
 
 2025-11-03 10:33:19.936236: I external/xla/xla/stream_executor/cuda/subprocess_compilation.cc:349] ptxas warning : Registers are spilled to local memory in function 'input_add_reduce_select_fusion', 96 bytes spill stores, 96 bytes spill loads
 
+[2025-11-04T04:18:12.055] error: *** JOB 23198698 ON idun-08-03 CANCELLED AT 2025-11-04T04:18:12 DUE TO TIME LIMIT ***

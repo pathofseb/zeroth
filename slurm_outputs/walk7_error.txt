@@ -132,3 +132,4 @@ NOTE: Using experimental fast data loading logic. To disable, pass
 E1103 10:54:44.956728 22441200194624 program.py:300] TensorBoard could not bind to port 9249, it was already in use
 ERROR: TensorBoard could not bind to port 9249, it was already in use
 
+[2025-11-04T04:48:12.038] error: *** JOB 23198905 ON idun-07-10 CANCELLED AT 2025-11-04T04:48:12 DUE TO TIME LIMIT ***

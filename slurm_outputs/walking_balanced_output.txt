@@ -1,7 +1,7 @@
 Running from directory: 
 Job name: zbot-train-walking_balanced
-Job ID: 23199083
-Node(s): idun-06-03
+Job ID: 23200783
+Node(s): idun-09-18
 Requirement already satisfied: ksim==0.1.95 in ./env/lib/python3.11/site-packages (from -r requirements.txt (line 4)) (0.1.95)
 Requirement already satisfied: xax==0.3.5 in ./env/lib/python3.11/site-packages (from -r requirements.txt (line 5)) (0.3.5)
 Requirement already satisfied: mujoco-scenes in ./env/lib/python3.11/site-packages (from -r requirements.txt (line 6)) (0.0.17)
@@ -403,26 +403,26 @@ zipp==3.23.0
 Checking JAX backend:
 gpu
 Set MUJOCO_GL=osmesa for headless rendering
-  [1;36mINFO[0m  [90m2025-11-03 11:12:25[0m [[1;34mxax.task.mixins.compile[0m] Setting JAX logging level to INFO
-  [1;36mINFO[0m  [90m2025-11-03 11:12:25[0m [[1;34mxax.task.mixins.compile[0m] Setting JAX compilation cache directory to /cluster/home/sebasrb/.cache/jax/jaxcache
-  [1;36mINFO[0m  [90m2025-11-03 11:12:25[0m [[1;34mxax.task.mixins.compile[0m] Configuring JAX compilation cache parameters
- [1;32mSTATUS[0m [90m2025-11-03 11:12:25[0m [[1;34mxax.task.mixins.artifacts[0m] /cluster/work/sebasrb/zeroth/training/zbot_walking_task/run_8
-  [1;36mINFO[0m  [90m2025-11-03 11:12:25[0m [[1;34mjax._src.xla_bridge[0m] Unable to initialize backend 'tpu': INTERNAL: Failed to open libtpu.so: libtpu.so: cannot open shared object file: No such file or directory
- [1;32mSTATUS[0m [90m2025-11-03 11:12:25[0m [[1;34mxax.task.mixins.train[0m] /cluster/work/sebasrb/zeroth/training/train_walking_balanced.py
+  [1;36mINFO[0m  [90m2025-11-04 06:55:28[0m [[1;34mxax.task.mixins.compile[0m] Setting JAX logging level to INFO
+  [1;36mINFO[0m  [90m2025-11-04 06:55:28[0m [[1;34mxax.task.mixins.compile[0m] Setting JAX compilation cache directory to /cluster/home/sebasrb/.cache/jax/jaxcache
+  [1;36mINFO[0m  [90m2025-11-04 06:55:28[0m [[1;34mxax.task.mixins.compile[0m] Configuring JAX compilation cache parameters
+ [1;32mSTATUS[0m [90m2025-11-04 06:55:28[0m [[1;34mxax.task.mixins.artifacts[0m] /cluster/work/sebasrb/zeroth/training/zbot_walking_task/run_25
+  [1;36mINFO[0m  [90m2025-11-04 06:55:28[0m [[1;34mjax._src.xla_bridge[0m] Unable to initialize backend 'tpu': INTERNAL: Failed to open libtpu.so: libtpu.so: cannot open shared object file: No such file or directory
+ [1;32mSTATUS[0m [90m2025-11-04 06:55:28[0m [[1;34mxax.task.mixins.train[0m] /cluster/work/sebasrb/zeroth/training/train_walking_balanced.py
 {"status": {"message": "/cluster/work/sebasrb/zeroth/training/train_walking_balanced.py", "filename": "train.py", "lineno": 714}}
- [1;32mSTATUS[0m [90m2025-11-03 11:12:25[0m [[1;34mxax.task.mixins.train[0m] zbot_walking_task
+ [1;32mSTATUS[0m [90m2025-11-04 06:55:28[0m [[1;34mxax.task.mixins.train[0m] zbot_walking_task
 {"status": {"message": "zbot_walking_task", "filename": "train.py", "lineno": 715}}
- [1;32mSTATUS[0m [90m2025-11-03 11:12:25[0m [[1;34mxax.task.mixins.train[0m] JAX devices: [CudaDevice(id=0)]
+ [1;32mSTATUS[0m [90m2025-11-04 06:55:29[0m [[1;34mxax.task.mixins.train[0m] JAX devices: [CudaDevice(id=0)]
 {"status": {"message": "JAX devices: [CudaDevice(id=0)]", "filename": "train.py", "lineno": 716}}
-  [1;36mINFO[0m  [90m2025-11-03 11:12:26[0m [[1;34mxax.task.mixins.train[0m] Starting a new training run
-  [1;35mPING[0m  [90m2025-11-03 11:12:26[0m [[1;34mksim.task.rl[0m] Model size: 1,073,009 parameters
+  [1;36mINFO[0m  [90m2025-11-04 06:55:30[0m [[1;34mxax.task.mixins.train[0m] Starting a new training run
+  [1;35mPING[0m  [90m2025-11-04 06:55:30[0m [[1;34mksim.task.rl[0m] Model size: 1,073,009 parameters
 {"ping": {"message": "Model size: 1,073,009 parameters", "filename": "rl.py", "lineno": 2078}}
-  [1;35mPING[0m  [90m2025-11-03 11:12:26[0m [[1;34mksim.task.rl[0m] Optimizer size: 2,146,018 parameters
+  [1;35mPING[0m  [90m2025-11-04 06:55:30[0m [[1;34mksim.task.rl[0m] Optimizer size: 2,146,018 parameters
 {"ping": {"message": "Optimizer size: 2,146,018 parameters", "filename": "rl.py", "lineno": 2079}}
-  [1;36mINFO[0m  [90m2025-11-03 11:12:26[0m [[1;34mroot[0m] Using JAX default device: cuda:0.
-[1;33mWARNING[0m [90m2025-11-03 11:12:27[0m [[1;34mksim.engine[0m] `max_action_latency=0.100000` is greater than `ctrl_dt=0.020000`
+  [1;36mINFO[0m  [90m2025-11-04 06:55:30[0m [[1;34mroot[0m] Using JAX default device: cuda:0.
+[1;33mWARNING[0m [90m2025-11-04 06:55:32[0m [[1;34mksim.engine[0m] `max_action_latency=0.100000` is greater than `ctrl_dt=0.020000`
 {"ping": {"message": "`max_action_latency=0.100000` is greater than `ctrl_dt=0.020000`", "filename": "engine.py", "lineno": 358}}
-  [1;36mINFO[0m  [90m2025-11-03 11:12:28[0m [[1;34mroot[0m] Using JAX default device: cuda:0.
+  [1;36mINFO[0m  [90m2025-11-04 06:55:33[0m [[1;34mroot[0m] Using JAX default device: cuda:0.
 Caught exception during training loop:
 
   Traceback (most recent call last):
@@ -456,24 +456,24 @@ Caught exception during training loop:
     File "[36m/cluster/work/sebasrb/zeroth/env/lib/python3.11/site-packages/xax/utils/jax.py[0m", line 139, in wrapped
       res = jitted_fn(*args, **kwargs)
             [1;35m^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
-    File "[36m/cluster/work/sebasrb/zeroth/env/lib/python3.11/site-packages/ksim/task/rl.py[0m", line 900, in step_engine
-      observations, next_obs_carry = get_observation(
-                                     [1;35m^^^^^^^^^^^^^^^^[0m
-    File "[36m/cluster/work/sebasrb/zeroth/env/lib/python3.11/site-packages/ksim/task/rl.py[0m", line 147, in get_observation
-      observation_val, new_carry = observation.observe_stateful(observation_state, curriculum_level, obs_rng)
-                                   [1;35m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
-    File "[36m/cluster/work/sebasrb/zeroth/training/train_walking_balanced.py[0m", line 855, in observe_stateful
-      heading_yaw_cmd = state.commands[COMMAND_NAME][3]
-                        ~~~~~~~~~~~~~~[1;35m^^^^^^^^^^^^^^[0m
+    File "[36m/cluster/work/sebasrb/zeroth/env/lib/python3.11/site-packages/ksim/task/rl.py[0m", line 909, in step_engine
+      action = self.sample_action(
+               [1;35m^^^^^^^^^^^^^^^^^^^[0m
+    File "[36m/cluster/work/sebasrb/zeroth/training/train_walking_balanced.py[0m", line 1811, in sample_action
+      action_dist_j, actor_carry = self.run_actor(
+                                   [1;35m^^^^^^^^^^^^^^^[0m
+    File "[36m/cluster/work/sebasrb/zeroth/training/train_walking_balanced.py[0m", line 1688, in run_actor
+      cmd = commands[COMMAND_NAME]  # shape (...,7)
+            ~~~~~~~~[1;35m^^^^^^^^^^^^^^[0m
     File "[36m/cluster/work/sebasrb/zeroth/env/lib/python3.11/site-packages/xax/utils/types/frozen_dict.py[0m", line 60, in __getitem__
       v = self._dict[key]
           ~~~~~~~~~~[1;35m^^^^^[0m
-  [1;31mKeyError[0m: 'unified'
+  [1;31mKeyError[0m: 'zero_command'
   --------------------
   For simplicity, JAX has removed its internal frames from the traceback of the following exception. Set JAX_TRACEBACK_FILTERING=off to include these.
 
-  [1;36mINFO[0m  [90m2025-11-03 11:12:38[0m [[1;34mxax.task.mixins.checkpointing[0m] Saving checkpoint to /cluster/work/sebasrb/zeroth/training/zbot_walking_task/run_8/checkpoints/ckpt.0.bin
-[36m┌────────────────────────────────────────────────────────────────────────────────────────┐[0m
-[36m│[0m [1;96mExiting training job for /cluster/work/sebasrb/zeroth/training/zbot_walking_task/run_8[0m [36m│[0m
-[36m└────────────────────────────────────────────────────────────────────────────────────────┘[0m
+  [1;36mINFO[0m  [90m2025-11-04 06:55:51[0m [[1;34mxax.task.mixins.checkpointing[0m] Saving checkpoint to /cluster/work/sebasrb/zeroth/training/zbot_walking_task/run_25/checkpoints/ckpt.0.bin
+[36m┌─────────────────────────────────────────────────────────────────────────────────────────┐[0m
+[36m│[0m [1;96mExiting training job for /cluster/work/sebasrb/zeroth/training/zbot_walking_task/run_25[0m [36m│[0m
+[36m└─────────────────────────────────────────────────────────────────────────────────────────┘[0m
 Job finished
